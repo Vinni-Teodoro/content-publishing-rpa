@@ -50,7 +50,7 @@ A automação:
 # 🏗 Arquitetura da Solução
 
 <p align="center">
-  <img src="./images/architecture.png" alt="Architecture Diagram" width="90%">
+  <img src="./images/Architecture.png" alt="Architecture Diagram" width="90%">
 </p>
 
 Fluxo da automação:
