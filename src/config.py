@@ -1,5 +1,11 @@
-ERP_URL = "https://erp-demo.local"
+"""
+Configurações da aplicação.
+"""
 
-USERNAME = "demo_user"
+ERP_URL = "https://example-erp.com"
 
-PASSWORD = "demo_password"
+INPUT_FILE = "examples/base.xlsx"
+
+OUTPUT_FILE = "output/report.xlsx"
+
+TIMEOUT = 10

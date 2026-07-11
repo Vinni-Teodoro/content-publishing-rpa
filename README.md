@@ -1,49 +1,56 @@
-# 🎓 Teacher Registration RPA
+# 📚 Content Publishing RPA
 
-> Automação desenvolvida em **Python** para otimizar o cadastro e vínculo de docentes em um ERP acadêmico, reduzindo drasticamente o tempo operacional e eliminando tarefas repetitivas.
+> Automação desenvolvida em **Python** para otimizar a publicação de conteúdos acadêmicos em um ERP, reduzindo significativamente o tempo operacional e eliminando tarefas repetitivas.
+
+<p align="center">
+  <img src="./images/banner.png" alt="Content Publishing RPA Banner" width="100%">
+</p>
 
 ---
 
 # 📖 Visão Geral
 
-Este projeto foi desenvolvido para automatizar o processo de cadastro e vínculo de docentes em um sistema ERP acadêmico.
+Este projeto apresenta um estudo de caso de uma automação desenvolvida para otimizar o processo de publicação de conteúdos em um ERP acadêmico.
 
-Antes da automação, cada docente precisava ser cadastrado manualmente, exigindo o preenchimento de diversos campos, validação de duplicidade e posterior vínculo ao ambiente correto.
-
-A solução automatiza todo esse fluxo, proporcionando maior velocidade, padronização e redução de erros.
+A solução automatiza a leitura de uma planilha Excel, verifica previamente se os conteúdos já existem no ambiente e realiza a publicação automática conforme regras de negócio definidas.
 
 ---
 
 # 🚨 O Problema
 
-O processo era totalmente manual e envolvia:
+Antes da automação, toda a disponibilização de conteúdos era realizada manualmente.
 
-- Pesquisa para verificar se o docente já existia;
-- Cadastro manual de informações pessoais;
-- Preenchimento de documentos;
-- Vínculo do docente ao ambiente correto;
-- Atualização da planilha de controle.
+O processo exigia:
 
-Esse processo demandava aproximadamente **30 minutos por docente**, além de estar sujeito a erros de digitação e inconsistências.
+- Acessar diversos ambientes do ERP;
+- Verificar se o conteúdo já existia;
+- Cadastrar materiais manualmente;
+- Inserir códigos HTML/Embed;
+- Configurar categorias;
+- Validar informações antes da publicação.
+
+Cada lote consumia aproximadamente **40 a 60 minutos**, além de estar sujeito a erros operacionais e retrabalho.
 
 ---
 
 # 💡 A Solução
 
-Foi desenvolvido um **RPA em Python** que:
+Foi desenvolvido um **RPA em Python** responsável por automatizar toda a rotina operacional.
+
+A automação:
 
 - 📄 Lê automaticamente uma planilha Excel;
-- 🔍 Verifica se o docente já está cadastrado;
-- 👤 Realiza o cadastro apenas quando necessário;
-- 🔗 Efetua automaticamente o vínculo ao ambiente correto;
-- 📊 Gera um relatório contendo o status de cada processamento.
+- 🔍 Valida a existência do conteúdo;
+- 📚 Publica materiais automaticamente;
+- 🏷️ Aplica regras específicas conforme o tipo do conteúdo;
+- 📊 Gera um relatório final da execução.
 
 ---
 
 # 🏗 Arquitetura da Solução
 
 <p align="center">
-  <img src="./images/architecture.png" width="90%">
+  <img src="./images/architecture.png" alt="Architecture Diagram" width="90%">
 </p>
 
 Fluxo da automação:
@@ -75,7 +82,7 @@ Relatório Final
 |------------|------------|
 | Python | Desenvolvimento da automação |
 | Selenium | Automação Web |
-| Pandas | Leitura e tratamento dos dados |
+| Pandas | Manipulação de dados |
 | Excel | Entrada e saída de informações |
 
 ---
@@ -84,27 +91,28 @@ Relatório Final
 
 ## Antes
 
-- ⏱️ Aproximadamente **30 minutos por docente**
+- ⏱️ 40–60 minutos por lote
 - ❌ Processo totalmente manual
-- ❌ Alto risco de erros de digitação
-- ❌ Verificações repetitivas
+- ❌ Alto risco de duplicidade
+- ❌ Muito retrabalho
 
 ## Depois
 
-- ⚡ Aproximadamente **30 segundos por docente**
+- ⚡ Aproximadamente 5 minutos
 - ✅ Processo automatizado
 - ✅ Validação automática
+- ✅ Eliminação de cadastros duplicados
 - ✅ Padronização das operações
-- ✅ Geração automática de relatório
 
 ---
 
 # 📂 Estrutura do Projeto
 
 ```text
-teacher-registration-rpa/
+content-publishing-rpa/
 
 ├── docs/
+├── examples/
 ├── images/
 ├── src/
 ├── requirements.txt
@@ -116,10 +124,10 @@ teacher-registration-rpa/
 
 # 🚀 Próximas Melhorias
 
-- Interface gráfica para execução da automação;
+- Interface gráfica para execução;
+- Dashboard de monitoramento;
 - Logs estruturados;
 - Integração com banco de dados;
-- Execução agendada;
 - Containerização utilizando Docker.
 
 ---
@@ -130,9 +138,9 @@ Durante o desenvolvimento deste projeto aprofundei conhecimentos em:
 
 - Automação Web com Selenium;
 - Manipulação de dados utilizando Pandas;
+- Estruturação de RPAs;
 - Tratamento de exceções;
-- Estruturação de RPAs para ambientes corporativos;
-- Boas práticas para automação de processos.
+- Automação de processos corporativos.
 
 ---
 
@@ -140,9 +148,9 @@ Durante o desenvolvimento deste projeto aprofundei conhecimentos em:
 
 Este repositório apresenta um estudo de caso baseado em um projeto desenvolvido em ambiente corporativo.
 
-Por questões de confidencialidade, **códigos-fonte, dados, URLs e informações proprietárias não são disponibilizados**.
+Por questões de confidencialidade, **códigos-fonte, URLs, dados e informações proprietárias não são disponibilizados**.
 
-O objetivo deste material é apresentar a arquitetura da solução, as tecnologias utilizadas e os resultados alcançados.
+O objetivo deste material é demonstrar a arquitetura da solução, as tecnologias utilizadas e os resultados alcançados.
 
 ---
 

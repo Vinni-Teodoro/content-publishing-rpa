@@ -1,13 +1,45 @@
+"""
+Geração de relatório de exemplo.
+"""
+
 import pandas as pd
-import os
+
+from config import OUTPUT_FILE
+
+from logger import logger
 
 
-def export_report(results):
+def generate_report():
 
-    os.makedirs("output", exist_ok=True)
+    report = pd.DataFrame(
 
-    df = pd.DataFrame(results)
+        [
 
-    df.to_excel("output/report.xlsx", index=False)
+            {
+                "Conteúdo": "Apresentação da Disciplina",
+                "Status": "Publicado"
+            },
 
-    print("\nRelatório salvo em output/report.xlsx")
+            {
+                "Conteúdo": "Aula Inaugural",
+                "Status": "Já Existia"
+            },
+
+            {
+                "Conteúdo": "Biblioteca Virtual",
+                "Status": "Publicado"
+            }
+
+        ]
+
+    )
+
+    report.to_excel(
+
+        OUTPUT_FILE,
+
+        index=False
+
+    )
+
+    logger.info("Relatório salvo em output/report.xlsx")

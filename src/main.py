@@ -1,48 +1,51 @@
-import pandas as pd
+"""
+Ponto de entrada da aplicação.
+"""
 
-from automation import TeacherRegistrationBot
-from models import Teacher
-from report import export_report
+from automation import ContentPublishingBot
+
+from report import generate_report
+
+from utils import load_links
+
+from utils import load_contents
+
+from logger import logger
 
 
 def main():
 
-    print("\nTeacher Registration RPA\n")
+    logger.info("=" * 50)
+    logger.info("Content Publishing RPA")
+    logger.info("=" * 50)
 
-    teachers_df = pd.read_excel("../examples/teachers.xlsx")
+    links = load_links()
 
-    teachers = []
+    contents = load_contents()
 
-    for _, row in teachers_df.iterrows():
+    logger.info(f"{len(links)} links encontrados.")
 
-        teachers.append(
+    logger.info(f"{len(contents)} conteúdos encontrados.")
 
-            Teacher(
-
-                name=row["Name"],
-                email=row["Email"],
-                document=row["Document"]
-
-            )
-
-        )
-
-    bot = TeacherRegistrationBot()
+    bot = ContentPublishingBot()
 
     bot.login()
 
-    results = []
+    bot.read_contents()
 
-    for teacher in teachers:
+    bot.validate_content()
 
-        result = bot.process_teacher(teacher)
+    bot.publish_content()
 
-        results.append(result)
+    bot.generate_logs()
 
-    export_report(results)
+    generate_report()
 
     bot.close()
 
+    logger.info("Processo finalizado com sucesso.")
+
 
 if __name__ == "__main__":
+
     main()
